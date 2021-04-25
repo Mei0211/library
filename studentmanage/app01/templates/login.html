@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>欢迎来到图书管登录界面！</title>
+<!-- For-Mobile-Apps-and-Meta-Tags -->
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="" />
+	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //For-Mobile-Apps-and-Meta-Tags -->
+
+<link href="../static/css/style1.css" type="text/css" rel="stylesheet" media="all">
+<link href="../static/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+<style>
+    .p_one{
+        color: #4fff24;
+        position: relative;
+        left: 636px;
+        top: 69px;
+        font-size: 23px;
+        font-family: monospace;
+    }
+</style>
+</head>
+
+<body style="background-image:url('../static/img/7.jpg');background-size: cover;">
+<section>
+{% if status == 0 %}
+    <p class="p_one"> {{ info }} </p>
+{% elif status == 1 %}
+    <p class="p_one"> {{ info }} </p>
+{% elif status == 2 %}
+    <p class="p_one"> {{ info }} </p>
+{% elif status == 3 %}
+    <p class="p_one"> {{ info }} </p>
+{% elif status == 4 %}
+    <p class="p_one"> {{ info }} </p>
+{% elif status == 5 %}
+    <p class="p_one"> {{ info }} </p>
+{% endif %}
+  <div class="stage">
+   <h1>欢迎来到图书馆管理系统</h1>
+    <div class="cbImage w3">
+		<h3>管理员注册</h3>
+		<form action="/register/" method="post">
+            {% csrf_token %}
+			<input type="text"  name="name" placeholder="姓名" required>
+			<input type="text"  name="id" placeholder="工号" required>
+            <input type="text"  name="telephone" placeholder="电话" required>
+            <input type="password"  name="password" placeholder="密码" required>
+
+			<input type="submit" class="" value="注册"style="position: relative;top: 15px;left: 11px;">
+		</form>
+	</div>
+
+
+    <div class="cbImage active signin agileits">
+		<h3>登录界面</h3>
+		<form action="/login_judge/" method="post"><!--提交到login_judge登录判定函数-->
+            {% csrf_token %}
+			<input type="text" name="telephone" class="name" placeholder="手机号" required>
+			<input type="password" name="password" class="password" placeholder="密码" required>
+			<input type="submit" value="登录"style="position: relative;top: 47px;left: 11px;">
+		</form>
+	</div>
+
+    <div class="cbImage agileinfo providerAdd">
+		<h3>欢迎进入系统</h3>
+        <h4>本系统模拟真实情况下管理员对图书馆系统的增删改操作，您就可以自由地管理图书！</h4>
+	</div>
+    <div class="clear"></div>
+  </div>
+  
+</section>
+<script src="../static/js/jquery-2.1.4.min.js"></script>
+<script src="../static/js/coverflow-slideshow.js"></script>
+
+</body>
+</html>
